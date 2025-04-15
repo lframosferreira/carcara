@@ -36,6 +36,7 @@
 
 #[macro_use]
 pub mod ast;
+mod automaton;
 pub mod benchmarking;
 pub mod checker;
 pub mod elaborator;

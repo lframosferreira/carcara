@@ -1,0 +1,9 @@
+WHITESPACE = _{ " " | "\t" | "\r" | "\n" }
+
+automaton = { "automaton" ~ identifier ~ "{" ~ init ~ transition* ~ accepting ~ "}" }
+identifier = @{ (ASCII_ALPHANUMERIC | "_")+ }
+number = @{ ASCII_DIGIT+ }
+range = { "[" ~ number ~ "," ~ number ~ "]" }
+transition = { identifier ~ "->" ~ identifier ~ range ~ ";" }
+init = { "init" ~ identifier ~ ";" }
+accepting = { "accepting" ~ identifier ~ ("," ~ identifier)* ~ ";" }
