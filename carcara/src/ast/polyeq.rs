@@ -852,6 +852,9 @@ fn nary_case(op: Operator) -> Option<NaryCase> {
         | Operator::ReKleeneClosure
         | Operator::ReComplement
         | Operator::ReKleeneCross
+        | Operator::ReFromAutomaton
+        | Operator::ReConvert
+        | Operator::ReEmptyIntersection
         | Operator::ReOption
         | Operator::ReRange => None,
 

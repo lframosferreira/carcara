@@ -395,15 +395,22 @@ impl<'a, R: BufRead> Parser<'a, R> {
             Operator::ReConcat
             | Operator::ReUnion
             | Operator::ReIntersection
+            | Operator::ReEmptyIntersection
             | Operator::ReDiff => {
                 assert_num_args(&args, 2..)?;
                 for s in sorts {
                     SortError::assert_eq(&Sort::RegLan, s)?;
                 }
             }
+            Operator::ReFromAutomaton => {
+                assert_num_args(&args, 1)?;
+                SortError::assert_eq(&Sort::String, sorts[0])?;
+            }
             Operator::ReKleeneClosure
             | Operator::ReComplement
             | Operator::ReKleeneCross
+            | Operator::ReConvert // convert should take an automaton and return a regular
+            // expression
             | Operator::ReOption => {
                 assert_num_args(&args, 1)?;
                 SortError::assert_eq(&Sort::RegLan, sorts[0])?;

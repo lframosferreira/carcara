@@ -195,6 +195,9 @@ impl PrimitivePool {
                 | Operator::ReComplement
                 | Operator::ReDiff
                 | Operator::ReKleeneCross
+                | Operator::ReFromAutomaton
+                | Operator::ReConvert
+                | Operator::ReEmptyIntersection
                 | Operator::ReOption
                 | Operator::ReRange => Sort::RegLan,
                 Operator::RareList => Sort::RareList,

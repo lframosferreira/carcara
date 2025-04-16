@@ -318,6 +318,15 @@ pub enum Operator {
     /// The `re.range` operator.
     ReRange,
 
+    /// The `re.from_automaton` operator.
+    ReFromAutomaton,
+
+    /// The `re.convert` operator.
+    ReConvert,
+
+    /// The `re.empty_intersection` operator.
+    ReEmptyIntersection,
+
     // BV operators (unary)
     BvNot,
     BvNeg,
@@ -440,6 +449,9 @@ impl_str_conversion_traits!(Operator {
     ReKleeneCross: "re.+",
     ReOption: "re.opt",
     ReRange: "re.range",
+    ReFromAutomaton: "re.from_automaton",
+    ReConvert: "re.convert",
+    ReEmptyIntersection: "re.empty_intersection",
     BvNot: "bvnot",
     BvNeg: "bvneg",
     BvAnd: "bvand",
